@@ -1,6 +1,11 @@
-doctype html
-html
-  head
-    title Document
-  body
-    p hello world
+extends templates/main
+
+block title
+  title Главная страница
+
+block content
+  include modules/Header/Header
+
+  p hello world
+
+  include modules/Footer/Footer
