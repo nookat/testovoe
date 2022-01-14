@@ -1,0 +1,21 @@
+.Likes {
+  display: inline-flex;
+  align-items: center;
+
+  &-Icon {
+    margin-right: 5px;
+    width: 15px;
+    height: 13px;
+    fill: $black;
+    cursor: pointer;
+
+    &_active {
+      fill: $likes-icon-active;
+    }
+  }
+
+  &-Count {
+    font-size: 12px;
+    color: $likes-color;
+  }
+}

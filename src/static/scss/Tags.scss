@@ -1,0 +1,20 @@
+.Tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  &-Item {
+    margin-right: 8px;
+    margin-bottom: 8px;
+    padding: 7px 11px;
+    color: $tag-color;
+    text-decoration: none;
+    background: $tag-background;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .15s;
+
+    &:hover {
+      background: $green;
+    }
+  }
+}
