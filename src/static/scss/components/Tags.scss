@@ -1,0 +1,47 @@
+.Tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  &-Item {
+    position: relative;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    padding: 7px 11px;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+
+    &:after {
+      position: absolute;
+      content: '';
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 4px;
+      background: $tag-background;
+      opacity: .5;
+      transition: .15s;
+    }
+
+    &:hover:after {
+      background: $green;
+      opacity: .7;
+    }
+  }
+
+  &-Hash {
+    position: relative;
+    z-index: 1;
+    color: $tag-color;
+
+    &_color {
+      &_white {
+        color: $white;
+      }
+    }
+  }
+}

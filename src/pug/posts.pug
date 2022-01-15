@@ -1,0 +1,81 @@
+extends templates/main
+
+block title
+  title Посты
+
+block content
+  .container
+    .Posts
+      .Posts-Row
+        -
+          let posts = [
+            {
+              img: 'img/post-preview.png',
+              tags: ['компания', 'супермаркет'],
+              title: 'Что выгоднее: заказать или купить',
+              text: 'Главный технолог рассказывает о том, как варим бульоны и гарантируем качество до последней капли',
+              date: '<time class="DateOfCreate PostPreview-DateOfCreate" datetime="2019-08-16">16 сентября 2019</time>',
+              likes: 12
+            },
+            {
+              img: 'img/post-preview.png',
+              tags: ['компания', 'супермаркет', 'производство'],
+              title: 'Что выгоднее: заказать или купить',
+              text: 'Главный технолог рассказывает о том, как варим бульоны и гарантируем качество до последней капли. Главный технолог рассказывает о том, как варим бульоны и гарантируем качество до последней капли.',
+              date: '<time class="DateOfCreate PostPreview-DateOfCreate" datetime="2019-08-20">20 сентября 2019</time>',
+              likes: 30
+            },
+            {
+              img: 'img/post-preview.png',
+              tags: ['компания'],
+              title: 'Что выгоднее: заказать в магазине или купить в супермаркете? Что выгоднее: заказать в магазине или купить в супермаркете?',
+              text: 'Главный технолог рассказывает о том, как варим бульоны и гарантируем качество до последней капли. Главный технолог рассказывает о том, как варим бульоны и гарантируем качество до последней капли.',
+              date: '<time class="DateOfCreate PostPreview-DateOfCreate" datetime="2019-08-20">20 сентября 2019</time>',
+              likes: 30
+            },
+            {
+              img: 'img/post-preview.png',
+              tags: ['компания', 'супермаркет', 'производство'],
+              title: 'Что выгоднее: заказать или купить',
+              text: 'Главный технолог рассказывает о том, как варим бульоны и гарантируем качество до последней капли',
+              date: '<time class="DateOfCreate PostPreview-DateOfCreate" datetime="2019-08-20">20 сентября 2019</time>',
+              likes: 30
+            },
+            {
+              img: 'img/post-preview.png',
+              tags: ['компания', 'супермаркет', 'производство'],
+              title: 'Что выгоднее: заказать или купить',
+              text: 'Главный технолог рассказывает о том, как варим бульоны и гарантируем качество до последней капли',
+              date: '<time class="DateOfCreate PostPreview-DateOfCreate" datetime="2019-08-20">20 сентября 2019</time>',
+              likes: 30
+            },
+            {
+              img: 'img/post-preview.png',
+              tags: ['компания', 'супермаркет', 'производство'],
+              title: 'Что выгоднее: заказать или купить',
+              text: 'Главный технолог рассказывает о том, как варим бульоны и гарантируем качество до последней капли',
+              date: '<time class="DateOfCreate PostPreview-DateOfCreate" datetime="2019-08-20">20 сентября 2019</time>',
+              likes: 30
+            },
+          ]
+        each post in posts
+          .Posts-Col
+            article.PostPreview.Posts-Item
+              .PostPreview-Header
+                a.PostPreview-Img(href="#" style=`background-image: url(${post.img})`)
+                .Tags.PostPreview-Tags
+                  each tag in post.tags
+                    a.Tags-Item(href="#")
+                      span.Tags-Hash.Tags-Hash_color_white= `#${tag}`
+              .PostPreview-TitleInner
+                a.PostPreview-TitleLink(href="#")
+                  h3.PostPreview-Title= post.title
+              .PostPreview-Body
+                p.PostPreview-Desc= post.text
+                .PostPreview-Footer !{post.date}
+                  |
+                  .Likes.PostPreview-Likes
+                    svg.Likes-Icon(fill="none" xmlns="http://www.w3.org/2000/svg")
+                      path(d="M7.27886 13L6.25982 12.0109C2.47481 8.76087 0 6.57065 0 3.88587C0 1.69565 1.74693 0 4.00337 0C5.24078 0 6.47818 0.565217 7.27886 1.4837C8.07953 0.565217 9.31694 0 10.5543 0C12.8108 0 14.5577 1.69565 14.5577 3.88587C14.5577 6.57065 12.0829 8.76087 8.2979 12.0109L7.27886 13Z")
+                    span.Likes-Count 12
+

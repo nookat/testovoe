@@ -41,6 +41,7 @@ const scripts = () => {
   return src(['src/static/js/main.js'])
     .pipe(concat('scripts.js'))
     .pipe(dest('dist/js'))
+    .pipe(browserSync.stream())
 }
 
 const removeJsFolder = () => {
@@ -77,7 +78,7 @@ const serve = () => {
     }
   })
 
-  watch('src/static/scss/*.scss', convertScssToCss)
+  watch('src/static/scss/**/*.scss', convertScssToCss)
   watch('src/static/js/libs/**/*.js', series(removeJsFolder, parallel(concatLibsScripts, scripts)))
   watch('src/static/css/**/*.css', series(removeStyles, parallel(styles, convertScssToCss)))
   watch('src/static/js/*.js', scripts)

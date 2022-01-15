@@ -21,16 +21,13 @@
 
   &-HeaderImage {
     height: 398px;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
   }
 
   &-DateOfCreate {
-    display: block;
     margin-bottom: 19px;
-    font-size: 13px;
-    font-style: italic;
-    color: $post-time-color;
   }
 
   &-Title {
@@ -40,7 +37,6 @@
 
   &-Content {
     margin: 0 auto;
-    padding: 0 10px;
   }
 
   &-Footer {
